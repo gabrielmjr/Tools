@@ -1,71 +1,91 @@
-package com.GabrielMJr.Twaire.tools;
+package com.gabrielMJr.twaire.tools;
 
-import com.GabrielMJr.Twaire.tools.Tools;
+class List {
 
-public class List extends Tools {
+  // Atributos
+  private static Long[] xLong;
+  private static Long[] yLong;
 
-    /* Converter Long em lista
-     */
-    @Override
-    public Long[] valueOf(Long value) {
-        String svalue = String.valueOf(value);
-        String[] list = svalue.split("");
-        Long[] list1 = new Long[list.length - 1];
-        int index = 0;
-        for (String res: list) {
-            switch (res.replaceAll("\\s", "")) {
-                case "":
-                    break;
+  /* Converter Long em lista */
+  protected Long[] valueOf(Long value) {
+    String sValue = String.valueOf(value);
+    String[] list = valueOf(sValue);
+    Long[] list1 = new Long[list.length];
+    int index = 0;
+    for (String res : list) {
+      switch (res) {
+        case "":
+          break;
 
-                default:
-                    list1[index] = Long.valueOf(res);
-                    index++;
-            }
-        }
-        return list1;
+        default:
+          list1[index] = Long.valueOf(res);
+          index++;
+      }
     }
+    return list1;
+  }
+  
+  /* Converter Long[][] em lista, vai ter que retornar duas Listas */
+  protected void matrixToLists(Long[][] matrix) {
+    setX(matrix[0]);
+    setY(matrix[1]);
+  }
+  
+  
+  protected void setX(Long[] value) {
+    xLong = value;
+  }
+  
+  protected Long[] getX() {
+    return xLong;
+  }
+  
+  protected void setY(Long[] value) {
+    yLong = value;
+  }
+  
+  protected Long[] getY() {
+    return yLong;
+  }
 
-    /*Converter inteiros em lista
-     */
-    @Override
-    public int[] valueOf(int value) {
-        String svalue = String.valueOf(value);
-        String[] list = svalue.split("");
-        int[] list1 = new int[list.length - 1];
-        int index = 0;
-        for (String res: list) {
-            switch (res.replaceAll("\\s", "")) {
-                case "":
-                    break;
 
-                default:
-                    list1[index] = Integer.valueOf(res);
-                    index++;
-            }
-        }
-        return list1;
+
+  /* Converter inteiros em lista */
+  protected int[] valueOf(int value) {
+    String sValue = String.valueOf(value);
+    String[] list = valueOf(sValue);
+    int[] list1 = new int[list.length - 1];
+    int index = 0;
+    for (String res : list) {
+      switch (res.replaceAll("\\s", "")) {
+        case "":
+          break;
+
+        default:
+          list1[index] = Integer.valueOf(res);
+          index++;
+      }
     }
+    return list1;
+  }
 
-    /*Converter String em lista
-     * A string não deve conter espaços
-     * Separator é uma espécie de separadora de Strings
-     * ex: 7262-87227-2737, o separador é -
-     */
-    @Override
-    public String[] valueOf(String value) {       
-        String[] list = value.split("");
-        String[] list1 = new String[list.length - 1];
-        int index = 0;
-        for (String res: list) {
-            switch (res.replaceAll("\\s", "")) {
-                case "":
-                    break;
 
-                default:
-                    list1[index] = res;
-                    index++;
-            }
-        }
-        return list1;
+
+  /* Converter String em String[] */
+  protected String[] valueOf(String value) {
+    String[] list = value.replaceAll("\\s+", "").split("");
+    String[] list1 = new String[list.length - 1];
+    int index = 0;
+    for (String res : list) {
+      switch (res.replaceAll("\\s", "")) {
+        case "":
+          break;
+
+        default:
+          list1[index] = res;
+          index++;
+      }
     }
+    return list1;
+  }
 }

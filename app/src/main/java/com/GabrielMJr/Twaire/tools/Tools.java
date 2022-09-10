@@ -1,55 +1,79 @@
-package com.GabrielMJr.Twaire.tools;
+package com.gabrielMJr.twaire.tools;
 
-import com.GabrielMJr.Twaire.tools.ToolManager;
+import com.gabrielMJr.twaire.tools.ToolManager;
+import com.gabrielMJr.twaire.tools.List;
+import com.gabrielMJr.twaire.tools.NumberAnalyst;
+import com.gabrielMJr.twaire.tools.StringAnalyst;
 
 public class Tools implements ToolManager {
 
+    private static final List list = new List();
+    private static final NumberAnalyst numberAnalyst = new NumberAnalyst();
+    private static final StringAnalyst stringAnalyst = new StringAnalyst();
     private static final String CreatorName = "Gabriel MJr";
     private static final String GHCreator = "github.com/gabrielmjr";
-    private static final String Version = "1.0.0";
+    private static final String Version = "1.0.1";
+
 
     public static void main(String[] args) {
         return;
     }
 
-    /*
-     * Esses métodos foram sobrecarregado no StringAnalyst,
-     * NumberAnalyst, List
-     */
+
     @Override
     public Boolean isNull(String value) {
-        return false; //StringAnalyst
+        return stringAnalyst.isNull(value); //StringAnalyst
     }
 
     @Override
     public Boolean isDot(String value) {
-        return false; // StringAnalyst
+        return stringAnalyst.isDot(value); // StringAnalyst
     }
 
     @Override
-    public String[] expNormalizer(Double value) {
-        return new String[3]; // NumberAnalyst 
+    public Long[] expNormalizer(Double value) {
+        return numberAnalyst.expNormalizer(value); // NumberAnalyst 
+    }
+    
+    @Override
+    public String normalize(Long[] value) {
+      return numberAnalyst.normalize(value); // NumberAnalyst
     }
 
     @Override
-    public String[] valueOf(String value) {
-        return new String[5]; // List
+    public String[] listOnValueOf(String value) {
+        return list.valueOf(value); // List
     }
 
     @Override
-    public Long[] valueOf(Long value) {
-        return new Long[5]; // List
+    public Long[] listOnValueOf(Long value) {
+        return list.valueOf(value); // List
     }
 
     @Override
-    public int[] valueOf(int value) {
-        return new int[5]; // list
+    public int[] listOnValueOf(int value) {
+        return list.valueOf(value); // list
     }
 
     @Override
     public String upper(Long value) {
-        return null;
-    } //NumberAnalyst
+        return numberAnalyst.upper(value);
+    } // NumberAnalyst
+    
+    @Override
+    public String checkValue(double value) {
+     	return numberAnalyst.checkValue(value); // NumberQnalysr
+    }
+    
+    @Override
+    public String checkValue(int value) {
+     	return numberAnalyst.checkValue(value); // NumberQnalysr
+    }
+    
+    @Override
+    public String checkValue(Long value) {
+     	return numberAnalyst.checkValue(value); // NumberQnalysr
+    }
 
     @Override
     public String getCreatorName() {
@@ -66,8 +90,4 @@ public class Tools implements ToolManager {
         return Tools.Version;
     }
     
-    @Override
-    public String normalize(String[] values) {
-      return null;
-    }
 }

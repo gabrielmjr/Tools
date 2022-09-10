@@ -1,71 +1,65 @@
-package com.GabrielMJr.Twaire.tools;
+package com.gabrielMJr.twaire.tools;
 
-import com.GabrielMJr.Twaire.tools.Tools;
+class StringAnalyst{
 
-public class StringAnalyst extends Tools {
+  /* Atributos
+   * Classe que analisa as strings
+   */
 
-    /* Atributos
-     * Classe que analisa as strings
-     */
+  /*
+   * Retorna se value == null, retorne true, senão false
+   */
+  protected Boolean isNull(String value) {
+    switch (value.replaceAll("\\s", "")) {
+      case "":
+        return true;
 
-    /*
-     * Retorna se value == null, retorne true, senão false
-     */
-    @Override
-    public Boolean isNull(String value) {
-        switch (value.replaceAll("\\s", "")) {
-            case "":
-                return true;
+      default:
+        return false;
+    }
+  }
 
-            default:
-                return false;
-        }
+  /*
+   * Se value é somente pontos, retorne true
+   * Reutilizado na classe matemática e física
+   * github.com/gabrielmjr/PMath
+   * github.com/gabrielmjr/Physic
+   */
+  protected Boolean isDot(String value) {
+
+    // Método que verifica e retorna um Boolean
+    return this.verifyDots(value);
+  }
+
+  /*
+   * Continuando com o método acima, isDot
+   */
+
+  private Boolean verifyDots(String value) {
+  
+    // Contador de pontos
+    int dotI = 0;
+    int index;
+
+    String[] values = value.replaceAll("\\s+", "").split("");
+    index = values.length;
+
+    for (String v : values) {
+      if (v.equals(".")) {
+        dotI++;
+      } else if (this.isNull(v)) {
+        index--;
+      }
     }
 
     /*
-     * Se value é somente pontos, retorne true
-     * Reutilizado na classe matemática e física
-     * github.com/gabrielmjr/PMath
-     * github.com/gabrielmjr/PPhysic
+     * Verificar se o número de pontos == número de elementos de values
+     * se for igual, retorne true, senão false
      */
-    @Override
-    public Boolean isDot(String value) {
-
-        // Método que verifica e retorna um Boolean      
-        return StringAnalyst.verifyDots(value);
+    if (dotI == index) {
+      return true;
+    } else {
+      return false;
     }
-
-    /*
-     * Continuando com o método acima, isDot
-     */
-
-    private static Boolean verifyDots(String value) {
-
-        // Contador de pontos
-        int dotI = 0;
-
-        String[] values = value.replaceAll("\\s", "").split("");
-
-        for (String v: values) {
-            switch (v) {
-                case ".":              
-                    // Acrescenta uma unidade sempre que tiver ponto
-                    dotI++;
-                    break;
-
-                default:
-                    break;
-            }
-        }
-
-        /*
-         * Verificar se o número de pontos == número de elementos de values
-         * se for igual, retorne true, senão false
-         */
-        if (dotI == values.length) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+  }
 }

@@ -1,104 +1,88 @@
-package com.GabrielMJr.Twaire.tools;
+package com.gabrielMJr.twaire.tools;
 
-import com.GabrielMJr.Twaire.tools.Tools;
-import com.GabrielMJr.Twaire.tools.List;
+class NumberAnalyst {
 
-public class NumberAnalyst extends Tools {
-
-    // Atributos
-    private static final Boolean idb = true; // Is Decimal (boolean)
-    private static Boolean ixb; // Is Exponencial (boolean)
-
-
+    //Atributos
+    
+    private final Boolean idb = true; // Is Decimal (boolean)
+    private Boolean ixb; // Is Exponencial (boolean)
+    
+    
     /*
      * Normalizar o expoente
      */
-    @Override
-    public String[] expNormalizer(Double value) {
+    protected Long[] expNormalizer(Double value) {
         // Indices, contadores e atrinutos
         List list = new List();
-        String[] values= list.valueOf(String.valueOf(value).replaceAll("\\s", ""));
-        NumberAnalyst.setIsExponencial(false);
-        return NumberAnalyst.expN(values, list);
-    }
-    
-    
-    /* Pode ser reaproveitado junto de expNormalizer para */
-    @Override
-    public String normalize(String[] values) {
-      String result = values[0] + ".";
-      result += values[2];
-      if (Integer.valueOf(values[1]) == (3)) {
-        result += " × 10" + this.upper(Long.valueOf(values[3]));
-      }
-      
-      return result;
+        String[] values= list.valueOf(String.valueOf(value));
+        this.setIsExponencial(false);
+        return this.expN(values, list);
     }
 
-    /* Nota de result:
-     * index 0 = número inteiro
-     * index 1 = O número inserido é decimal:
-     *   - se 0 então não é nenhum deles
-     *   - se 1 então é decimal
-     *   - se 2 então é exponencial
-     *   - se 3 então são os dois
-     * index 2 = número decimal
-     * index 3 = número exponencial
-     */
-    // Continuando com o método expNormalizer
-    private static String[] expN(String[] values, List list) {
+
+    private Long[] expN(String[] values, List list) {
         // Atributos locais
         int i;
         int j;
         int k;
         String natural = ""; // String que contém o valor natural
         String decimal = ""; // String que contém o valor decimal
-        String result[] = new String[3]; // Resultado final
-        for (i = 0; i <= values.length - 1; i++) {
+        Long result[] = new Long[3]; // Resultado final
+        
+        for (i = 0; i < values.length; i++) {
             switch (values[i].replaceAll("\\s", "")) {
                 case ".": // Caso tenha "."/ seja decimal
                     // Pegando somente a parte natural da lista
-                    for (j = 0; j <= i - 1; j++) {
-                        natural = natural + values[j];
+                    for (j = 0; j < i; j++) {
+                        natural += values[j];
                     }
 
                     // Pegando somente o decimal
-                    for (k = j + 1; k <= values.length - 1; k++) {
-                        decimal = decimal + values[k];                  
-                    } 
+                    for (k = j + 1; k < values.length; k++) {
+                        decimal += values[k];
+                    }
                     break;
 
                 case "E":
-                    NumberAnalyst.setIsExponencial(true);
+                    this.setIsExponencial(true);
 
                 default:
                     break;
-
-            } 
+            }
         }
 
         // Resultado da verificação de decimal e exponencial
-        result[1] = String.valueOf(NumberAnalyst.checkValues(NumberAnalyst.isDecimal(), NumberAnalyst.isExponencial()));
+        result[1] = checkValues(isDecimal(), isExponencial());
 
         // Retornando valores de acordo com os resultados
-        if (Integer.valueOf(result[1]) == 1) {
-            result[0] = natural;
-            result[2] = NumberAnalyst.genDecimal(decimal, list)[0];
+        if (result[1] == 1) {
+            result[0] = Long.valueOf(natural);
+            result[2] = genDecimal(decimal, list)[0];
             return result;
-        } else if (Integer.valueOf(result[1]) == 3) {
-            String[] res = new String[4];
-            String[] res1;
-            res[0] = natural;
+            
+        } else if (result[1] == 3) {
+            Long[] res = new Long[4];
+            Long[] res1 = genDecimal(decimal, list);
+            res[0] = Long.valueOf(natural);
             res[1] = result[1];
-            res1 = NumberAnalyst.genDecimal(decimal, list);
             res[2] = res1[0];
             res[3] = res1[1];
             return res;
         } else {
-            return new String[3];
+            return result;
         }
-
     }
+
+
+    /* Normaliza valores retornados por ExpNormalizer*/
+    protected String normalize(Long[] values) {
+        String result = values[0] + ".";
+        result += values[2];
+        if (values[1] == 3) {
+            result += " × 10" + upper(Long.valueOf(values[3]));
+        }     
+        return result;
+    }    
 
     /* Verifica valores lógicos de 2 argumentos
      * Nota:
@@ -107,39 +91,33 @@ public class NumberAnalyst extends Tools {
      *   retorna 2 se não tiver decimal mas tiver exponencial
      *   retorna 3 se tiver decimal e exponencial
      */
-    private static int checkValues(Boolean isValue1, Boolean isValue2) {
+    private static Long checkValues(Boolean isValue1, Boolean isValue2) {
         int isV1;
         int isV2;
-        switch (String.valueOf(isValue1)) {
-            case "true":
-                isV1 = 1;
-                break;
+        if (isValue1) {
+            isV1 = 1;
+         } else {
+            isV1 = 0;
+         }
 
-            default:
-                isV1 = 0;
-                break;
-        }
-
-        switch (String.valueOf(isValue2)) {
-            case "true":
+        if (isValue2) {
                 isV2 = 2;
-                break;
-
-            default:
+         } else {
                 isV2 = 0;
-        }
+         }
 
-        return isV1 + isV2;
+        return Long.valueOf(isV1 + isV2);
     }
 
+  
     /* Tratamento da parte decimal do valor inserido
      * List = com.GabrielMJr.Twaire.tools.List
      */
-    private static String[] genDecimal(String decimal, List list) {
+    private Long[] genDecimal(String decimal, List list) {
         String[] values = list.valueOf(decimal);
-        int index = values.length - 1;
+        int index = values.length;
         String finall = "";
-        String[] result = new String[2];
+        Long[] result = new Long[2];
         String expoente = "";
         int i = 0;
         int j = 0;
@@ -147,11 +125,11 @@ public class NumberAnalyst extends Tools {
         int l = 0;
         int n = 0;
 
-        // Índice de "E"
-        for (int m = 0; m <= index; m++) {
+        // Índice do inicio da parte exponencial 
+        for (int m = 0; m < index; m++) {
             switch (values[m]) {
                 case "E":
-                    l = m;
+                    l = m + 1;
                     break;
 
                 default:
@@ -160,7 +138,7 @@ public class NumberAnalyst extends Tools {
         }
 
         // Se não for exponencial
-        for (i = 0; i <= index; i++) {
+        for (i = 0; i < index; i++) {
             // Se for somente decimal
             if (l == 0) {
                 if (index >= 3 && j <= 3) {
@@ -178,34 +156,39 @@ public class NumberAnalyst extends Tools {
 
                 // Se for exponencial
             } else {
-                for (; k <= l - 1; k++) {
-                    if (index - l >= 3 && j <= 3) {
+                for (; k < l - 1; k++) {
+                    if (index - l - 1 >= 3 && j <= 3) {
                         finall = finall + values[k];
                         j++;
-                    } else if (index - l == 2 && j <= 2) {
+                    } else if (index - l - 1 == 2 && j <= 2) {
                         finall = finall + values[k];
                         j++;
-                    } else if (index - l == 1 && j <= 1) {
+                    } else if (index - l - 1 == 1 && j <= 1) {
                         finall = finall + values[k];
                         j++;
-                    } else if (index - l == 0) {
+                    } else if (index - l - 1 == 0) {
                         finall = values[k];
                     }
                 }
             }
         }
 
-        for (n = l + 1; n <= index; n++) {
-            expoente = expoente + values[n];    
-        }
-        result[0] = finall;
-        result[1] = expoente;
+        try {
+            for (n = l; n < index; n++) {
+                expoente += values[n];   
+            }
+        } catch (NumberFormatException exp){
+            for (n = l - 1; n < index; n++) {
+                expoente += values[n];
+            }
+        } 
+        result[0] = Long.valueOf(finall);
+        result[1] = Long.valueOf(expoente);
         return result;
     }
 
     // Coloca os números em forma de expoente
-    @Override
-    public String upper(Long value) {
+    protected String upper(Long value) {
         if (value < 0) {
             value = -value;
             return "-" + NumberAnalyst.genUpper(value);
@@ -213,51 +196,84 @@ public class NumberAnalyst extends Tools {
             return NumberAnalyst.genUpper(value);
         }
     }
-
-    // Colocar os valores em minúsculo
-    private static String genUpper(Long value) {
-        Long[] values = new List().valueOf(value);
+    
+        // Colocar os valores em minúsculo
+    private static String genUpper(Long valueV) {
+        Long[] values = new List().valueOf(valueV);
         String result = "";
 
-        for (int i = 0; i <= values.length - 1; i++) {
-            if (values[i] == 0) {
+        for (Long value: values) {
+            if (value == 0) {
                 result += "⁰";
-            } else if (values[i] == 1) {
+            } else if (value == 1) {
                 result += "¹";
-            } else if (values[i] == 2) {
+            } else if (value == 2) {
                 result += "²";
-            } else if (values[i] == 3) {
+            } else if (value == 3) {
                 result += "³";
-            } else if (values[i] == 4) {
+            } else if (value == 4) {
                 result += "⁴";
-            } else if (values[i] == 5) {
+            } else if (value == 5) {
                 result += "⁵";
-            } else if (values[i] == 6) {
+            } else if (value == 6) {
                 result += "⁶";
-            } else if (values[i] == 7) {
+            } else if (value == 7) {
                 result += "⁷";
-            } else if (values[i] == 8) {
+            } else if (value == 8) {
                 result += "⁸";
-            } else if (values[i] == 9) {
+            } else if (value == 9) {
                 result += "⁹";
             } else {
                 result = null;
             }
+          }
+          return result;
         }
+        
+	
+	/* Método que verifica um número value;
+	 *  se value > 0, returna value entre parentesis˜
+	 * senão, retorna n
+	 */
+	//Sobrecarga do tipo double
+	protected String checkValue(double value) {
+		if (value < 0) {
+			return "(" + value + ")"; 
+		} else {
+			return String.valueOf(value);
+		} 
+	}
+	
+	// Sobrecarga do tipo int
+	protected String checkValue(int value) {
+		if (value < 0) {
+			return "(" + value + ")"; 
+		} else {
+			return String.valueOf(value);
+		}
+	}
+	
+	// Sobrecarga do tipo Long
+	protected String checkValue(Long value) {
+		if (value < 0) {
+			return "(" + value + ")"; 
+		} else {
+			return String.valueOf(value);
+		} 
+	}
 
-        return result;
+
+
+
+    private Boolean isDecimal() {
+        return this.idb;
     }
 
-
-    private static Boolean isDecimal() {
-        return NumberAnalyst.idb;
+    private void setIsExponencial(Boolean value) {
+        this.ixb = value;
     }
 
-    private static void setIsExponencial(Boolean value) {
-        NumberAnalyst.ixb = value;
-    }
-
-    private static Boolean isExponencial() {
-        return NumberAnalyst.ixb;
+    private Boolean isExponencial() {
+        return this.ixb;
     }
 }
