@@ -24,31 +24,28 @@ class List {
     }
     return list1;
   }
-  
+
   /* Converter Long[][] em lista, vai ter que retornar duas Listas */
   protected void matrixToLists(Long[][] matrix) {
     setX(matrix[0]);
     setY(matrix[1]);
   }
-  
-  
+
   protected void setX(Long[] value) {
     xLong = value;
   }
-  
+
   protected Long[] getX() {
     return xLong;
   }
-  
+
   protected void setY(Long[] value) {
     yLong = value;
   }
-  
+
   protected Long[] getY() {
     return yLong;
   }
-
-
 
   /* Converter inteiros em lista */
   protected int[] valueOf(int value) {
@@ -68,8 +65,6 @@ class List {
     }
     return list1;
   }
-
-
 
   /* Converter String em String[] */
   protected String[] valueOf(String value) {

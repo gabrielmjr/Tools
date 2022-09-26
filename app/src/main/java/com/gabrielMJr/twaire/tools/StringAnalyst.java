@@ -1,6 +1,6 @@
-package com.gabrielMJr.twaire.tools;
+ package com.gabrielMJr.twaire.tools;
 
-class StringAnalyst{
+class StringAnalyst {
 
   /* Atributos
    * Classe que analisa as strings
@@ -36,7 +36,7 @@ class StringAnalyst{
    */
 
   private Boolean verifyDots(String value) {
-  
+
     // Contador de pontos
     int dotI = 0;
     int index;
@@ -60,6 +60,27 @@ class StringAnalyst{
       return true;
     } else {
       return false;
+    }
+  }
+
+  // Contador de palavras
+  protected int countWords(String value) {
+    String[] words;
+    int counter = 0;
+
+    if (isNull(value)) {
+      return counter;
+
+    } else {
+
+      value = value.replaceAll("\\s+", "-");
+      words = value.split("-");
+
+      for (String x : words) {
+        counter++;
+      }
+
+      return counter;
     }
   }
 }
