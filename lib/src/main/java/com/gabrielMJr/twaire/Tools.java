@@ -1,10 +1,12 @@
-package com.gabrielMJr.twaire.tools;
+package com.gabrielMJr.twaire;
 
-import com.gabrielMJr.twaire.tools.List;
-import com.gabrielMJr.twaire.tools.Matrix;
-import com.gabrielMJr.twaire.tools.NumberAnalyst;
-import com.gabrielMJr.twaire.tools.StringAnalyst;
-import com.gabrielMJr.twaire.tools.ToolManager;
+import com.gabrielMJr.twaire.List;
+import com.gabrielMJr.twaire.Matrix;
+import com.gabrielMJr.twaire.NumberAnalyst;
+import com.gabrielMJr.twaire.StringAnalyst;
+import com.gabrielMJr.twaire.ToolManager;
+
+import java.util.ArrayList;
 
 public class Tools implements ToolManager {
 
@@ -32,7 +34,7 @@ public class Tools implements ToolManager {
   }
 
   @Override
-  public Long[] expNormalizer(Double value) {
+  public ArrayList<Long> expNormalizer(Double value) {
     return numberAnalyst.expNormalizer(value); // NumberAnalyst
   }
 

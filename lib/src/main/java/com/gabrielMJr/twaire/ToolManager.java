@@ -1,11 +1,13 @@
-package com.gabrielMJr.twaire.tools;
+package com.gabrielMJr.twaire;
+
+import java.util.ArrayList;
 
 public interface ToolManager {
   public abstract Boolean isNull(String value);
 
   public abstract Boolean isDot(String value);
 
-  public abstract Long[] expNormalizer(Double value);
+  public abstract ArrayList<Long> expNormalizer(Double value);
 
   public abstract String normalize(Long[] value);
 
