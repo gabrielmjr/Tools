@@ -40,7 +40,8 @@ public class Tools implements ToolManager {
   }
 
   @Override
-  public String[] listOnValueOf(String value
+  public String[] listOnValueOf(String value)
+  {
     return list.valueOf(value); // List
   }
 
