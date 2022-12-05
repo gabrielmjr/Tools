@@ -51,7 +51,7 @@ class List {
   protected int[] valueOf(int value) {
     String sValue = String.valueOf(value);
     String[] list = valueOf(sValue);
-    int[] list1 = new int[list.length - 1];
+    int[] list1 = new int[list.length];
     int index = 0;
     for (String res : list) {
       switch (res.replaceAll("\\s", "")) {
@@ -69,7 +69,7 @@ class List {
   /* Converter String em String[] */
   protected String[] valueOf(String value) {
     String[] list = value.replaceAll("\\s+", "").split("");
-    String[] list1 = new String[list.length - 1];
+    String[] list1 = new String[list.length];
     int index = 0;
     for (String res : list) {
       switch (res.replaceAll("\\s", "")) {

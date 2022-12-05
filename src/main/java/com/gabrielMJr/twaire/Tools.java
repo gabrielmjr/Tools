@@ -19,10 +19,6 @@ public class Tools implements ToolManager {
   private static final String GHCreator = "github.com/gabrielmjr";
   private static final String Version = "1.0.2";
 
-  public static void main(String[] args) {
-    return;
-  }
-
   @Override
   public Boolean isNull(String value) {
     return stringAnalyst.isNull(value); // StringAnalyst
@@ -44,7 +40,7 @@ public class Tools implements ToolManager {
   }
 
   @Override
-  public String[] listOnValueOf(String value) {
+  public String[] listOnValueOf(String value
     return list.valueOf(value); // List
   }
 
