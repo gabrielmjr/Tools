@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
-  This class test theethods of List class
+  This class tests methods of List class
 */
 
 public class ListTest
