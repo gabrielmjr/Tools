@@ -19,6 +19,7 @@ public class ListTest
         tools = new Tools();
     }
     
+    
     /*
       List on value of method for String type
     */
@@ -62,4 +63,33 @@ public class ListTest
             assertEquals(demonstration[i], values_result[i]);
         }
     }
+    
+    
+    /*
+     List on value of method for Integer type
+    */
+    @Test
+    public void listOnValueOfIntTest()
+    {
+ // General index size
+        int index = 9;
+        
+        int value = 123456789;
+        
+        // As the value result need to be finally
+        int[] demonstration = new int[index];
+        
+        for (int i = 0; i < index; i++)
+        {
+            demonstration[i] = i + 1;
+        }
+        
+        int[] values_result = tools.listOnValueOf(value);
+        
+        for (int i = 0; i < index; i++)
+        {
+            assertEquals(demonstration[i], values_result[i]);
+        }
+    }
+    
 }
