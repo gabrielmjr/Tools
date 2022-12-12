@@ -7,9 +7,15 @@ class StringAnalyst {
    */
 
   /*
-   * Retorna se value == null, retorne true, senão false
+   * Retorna true se value == null, senão false
    */
   protected Boolean isNull(String value) {
+      // Check if its null
+      if (value == null)
+      {
+          return true;
+      }
+      
     switch (value.replaceAll("\\s", "")) {
       case "":
         return true;
@@ -36,6 +42,12 @@ class StringAnalyst {
    */
 
   private Boolean verifyDots(String value) {
+
+    // Check if it's null
+    if (this.isNull(value))
+    {
+        return false;
+    }
 
     // Contador de pontos
     int dotI = 0;
@@ -73,8 +85,9 @@ class StringAnalyst {
 
     } else {
 
-      value = value.replaceAll("\\s+", "-");
-      words = value.split("-");
+      // Remove spaces
+      value = value.replaceAll("\\s+", "");
+      words = value.split("");
 
       for (String x : words) {
         counter++;

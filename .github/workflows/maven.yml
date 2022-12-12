@@ -10,7 +10,7 @@ name: Java CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "JUnit_test_implementation"  ]
   pull_request:
     branches: [ "master" ]
 
@@ -27,9 +27,13 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+
+    # Build the project
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
+    # Units tests
+    - name: JUnit test
+      run: mvn -B test --file pom.xml
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
