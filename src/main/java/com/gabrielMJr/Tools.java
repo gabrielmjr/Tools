@@ -1,10 +1,10 @@
-package com.gabrielMJr.twaire.tools;
+package com.gabrielMJr.tools;
 
-import com.gabrielMJr.twaire.tools.List;
-import com.gabrielMJr.twaire.tools.Matrix;
-import com.gabrielMJr.twaire.tools.NumberAnalyst;
-import com.gabrielMJr.twaire.tools.StringAnalyst;
-import com.gabrielMJr.twaire.tools.ToolManager;
+import com.gabrielMJr.tools.List;
+import com.gabrielMJr.tools.Matrix;
+import com.gabrielMJr.tools.NumberAnalyst;
+import com.gabrielMJr.tools.StringAnalyst;
+import com.gabrielMJr.tools.ToolManager;
 
 import java.util.ArrayList;
 
