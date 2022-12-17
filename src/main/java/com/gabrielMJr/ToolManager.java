@@ -30,6 +30,8 @@ public interface ToolManager {
   public abstract String getGHCreator();
 
   public abstract String getVersion();
+  
+  public abstract Long getNumberFromVector(String[] vector);
 
   public abstract int countWords(String value);
 

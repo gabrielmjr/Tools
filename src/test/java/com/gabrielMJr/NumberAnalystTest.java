@@ -94,4 +94,35 @@ public class NumberAnalystTest
         assertEquals(value_result, tools.upper(value));
     }
     
+    /*
+     This method tests get number from vector method , its like:
+     String[] vector = new String[]
+         {
+             "63hf", "ndu8", "721"
+         };
+         
+     The method must return a long value like: 638721
+    */
+    @Test
+    public void getNumberFromVectorTest()
+    {
+        // Values to be tested
+        String[] vector_1 = new String[]
+            {
+                "378", "hhj76", "hdb67jd"
+            };
+            
+        String[] vector_2 = new String[]
+            {
+                "-$-jdh84", "!;#-)jhd", "y736==✓jhs"
+            };
+            
+        // Results must be:
+        Long result_1 = Long.valueOf(3787667);
+        Long result_2 = Long.valueOf(84736);
+        
+        // Testing
+        assertEquals(result_1, tools.getNumberFromVector(vector_1));
+        assertEquals(result_2, tools.getNumberFromVector(vector_2));
+    }
 }

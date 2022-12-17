@@ -1,12 +1,22 @@
 package com.gabrielMJr.tools;
 
 import java.util.ArrayList;
+import com.gabrielMJr.tools.StringAnalyst;
 
 class NumberAnalyst {
 
     //Atributos
     private static double value;
     private static String[] values;
+    
+    // StringAnalyst object
+    private static StringAnalyst sAnalyst = new StringAnalyst();
+    
+    // Numbers vector
+    private static int[] numbers = new int[]
+        {
+           1, 2, 3, 4, 5, 6, 7, 8, 9, 0 
+        };
     
     // The result in parts
     private static Long integer;
@@ -163,6 +173,61 @@ class NumberAnalyst {
 		} 
 	}
 	
+	
+	// Get number from vector
+	protected Long getNumberFromVector(String[] vector)
+	{
+        // String number variable
+        String numberString = "";
+  
+        // Get word from words
+        for (String value: vector)
+        {
+            // Check if it's null
+            if(sAnalyst.isNull(value))
+            {
+                // Continue the loop
+                continue;
+            }
+            else
+            {
+                // Get algarism from word.split("")
+                for (String v: value.split(""))
+                {
+                   // Get number from numbers
+                    for (int num:numbers)
+                    {
+                    // Surround with    try catch for errors
+                        try
+                        {
+                            // Convert v to integer and check if its the same as number
+                            if (Integer.valueOf(v) == num)
+                            {
+                                // Check if StringNumber is null
+                                if (sAnalyst.isNull(numberString))
+                                {
+                                                        numberString = v;
+                                }
+                
+                                // Else, append stringNumber
+                                else
+                                { 
+                                    numberString += v;
+                                }
+                            }
+                        }
+                        // If the conversion arent compatible, continue the loop
+                        catch (NumberFormatException nfe)
+                        {
+                            continue;
+                        }
+                    }
+                }
+            }
+        }
+    // Return the result
+    return Long.valueOf(numberString);
+    }
 	
 	// Getter and setters
 	public Long getInteger()

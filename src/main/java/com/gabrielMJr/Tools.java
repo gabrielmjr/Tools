@@ -74,6 +74,12 @@ public class Tools implements ToolManager {
   public String checkValue(Long value) {
     return numberAnalyst.checkValue(value); // NumberAnalyst
   }
+  
+  @Override
+  public Long getNumberFromVector(String[] vector)
+  {
+      return numberAnalyst.getNumberFromVector(vector);
+  }
 
   @Override
   public int countWords(String value) {
