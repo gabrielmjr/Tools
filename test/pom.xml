@@ -22,19 +22,29 @@
   </name>
 
   <distributionManagement>
-   <repository>
-     <id>github</id>
-     <name>GitHub gabrielmjr Apache Maven Packages</name>
-     <url>https://maven.pkg.github.com/gabrielmjr/Tools</url>
-   </repository>
-</distributionManagement>
-
-<scm>
-  <developerConnection>
-    scm:git:https://github.com/gabrielmjr/Tools.git
-  </developerConnection>
-  <tag>tools-1.0.3.</tag>
+    <repository>
+      <id>github</id>
+      <name>GitHub gabrielmjr Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/gabrielmjr/Tools</url>
+    </repository>
+  </distributionManagement>  
+ 
+  <scm>
+    <connection>scm:git:https://github.com/gabrielmjr/Tools.git</connection>
+    <developerConnection>scm:git:https://github.com/gabrielmjr/Tools.git</developerConnection>
+    <tag>tools-1.0.3.</tag>
+    <url>https://github.com/gabrielmjr/Tools</url>
+    <tag>Tools</tag>
   </scm>
+
+  <developers>
+    <developer>
+      <name>Gabriel M Júnior</name>
+      <email>gmjplayys@gmail.com</email>
+      <organization>com.github.gabrielmjr</organization>
+      <organizationUrl>https://github.com/gabrielmjr/Tools</organizationUrl>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>
@@ -107,6 +117,12 @@
 	  <groupId>org.apache.maven.plugins</groupId>
 	  <artifactId>maven-release-plugin</artifactId>
     	  <version>3.0.0-M7</version>
+	  <configuration>
+	    <autoVersionSubmodules>true</autoVersionSubmodules>
+	    <useReleaseProfile>false</useReleaseProfile>
+	    <releaseProfile>Release</releaseProfile>
+	    <goals>deploy</goals>
+	  </configuration>
 	</plugin> 
  
 	<plugin>
