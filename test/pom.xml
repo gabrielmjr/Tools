@@ -32,7 +32,6 @@
   <scm>
     <connection>scm:git:https://github.com/gabrielmjr/Tools.git</connection>
     <developerConnection>scm:git:https://github.com/gabrielmjr/Tools.git</developerConnection>
-    <tag>tools-1.0.3.</tag>
     <url>https://github.com/gabrielmjr/Tools</url>
     <tag>Tools</tag>
   </scm>
