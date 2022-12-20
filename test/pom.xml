@@ -14,7 +14,7 @@
   </artifactId>
   
   <version>
-      1.0.3-SNAPSHOT
+      1.0.3
   </version>
 
   <name>
@@ -33,7 +33,7 @@
     <connection>scm:git:git@github.com:gabrielmjr/Tools.git</connection>
     <developerConnection>scm:git:git@github.com:gabrielmjr/Tools.git</developerConnection>
     <url>https://github.com/gabrielmjr/Tools</url>
-    <tag>Tools</tag>
+    <tag>tools-1.0.3</tag>
   </scm>
 
   <developers>
