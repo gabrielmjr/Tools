@@ -5,7 +5,7 @@
 
   <groupId>com.gabrielMJr</groupId>
   <artifactId>tools</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.3</version>
   <name>tools</name>
   <url>${project.scm.url}</url>
 
@@ -43,7 +43,7 @@
     <connection>scm:git:git:${project.scm.url}</connection>
     <developerConnection>scm:git:${project.scm.url}</developerConnection>
     <url>git@github.com:gabrielmjr/Tools</url>
-    <tag>Tools</tag>
+    <tag>v1.0.3</tag>
   </scm>
 
   <dependencies>
