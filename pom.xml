@@ -40,9 +40,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git://github.com/gabrielmjr/Tools</connection>
-    <developerConnection>scm:git:https://github.com/gabrielmjr/Tools</developerConnection>
-    <url>https://github.com/gabrielmjr/Tools</url>
+    <connection>scm:git:${project.scm.url}</connection>
+    <developerConnection>scm:git:${project.scm.url}</developerConnection>
+    <url>git@github.com:gabrielmjr/Tools</url>
     <tag>v1.0.3.</tag>
   </scm>
 
