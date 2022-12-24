@@ -25,14 +25,14 @@
   <distributionManagement>
     <repository>
       <id>github</id>
-      <name>GitHub Gabriel MJr Apache Maven Packages</name>
-      <url>${project.scm.url}</url>
+      <name>GitHub gabrielmjr Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/gabrielmjr/Tools</url>
     </repository>
   </distributionManagement>
 
   <developers>
     <developer>
-      <name>Gabriel MJr</name>
+      <name>Gabriel M Júnior</name>
       <email>gmjplayys@gmail.com</email>
       <organization>com.github.gabrielmjr</organization>
       <organizationUrl>${project.scm.url}</organizationUrl>
