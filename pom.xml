@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.gabrielMJr</groupId>
+  <groupId>com.gabrielMJr.twaire</groupId>
   <artifactId>tools</artifactId>
   <version>1.0.3.-SNAPSHOT</version>
   <name>${project.artifactId}</name>
@@ -108,7 +108,7 @@
               <manifest>
                 <addClasspath>true</addClasspath>
                 <classpathPrefix>lib/</classpathPrefix>
-                <mainClass>com.gabrielMJr.tools.Tools</mainClass>
+                <mainClass>${project.groupId}.Tools</mainClass>
               </manifest>
             </archive>
           </configuration>

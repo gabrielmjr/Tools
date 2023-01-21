@@ -1,7 +1,6 @@
-package com.gabrielMJr.tools;
+package com.gabrielMJr.twaire.tools;
 
 import java.util.ArrayList;
-import com.gabrielMJr.tools.StringAnalyst;
 
 class NumberAnalyst {
 

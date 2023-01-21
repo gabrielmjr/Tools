@@ -1,4 +1,4 @@
-package com.gabrielMJr.tools;
+package com.gabrielMJr.twaire.tools;
 
 class Matrix {
   // Classe que trata de matrizes
