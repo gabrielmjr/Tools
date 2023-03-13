@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gabrielMJr.twaire.tools.NumberAnalystTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-13T15:57:13" hostname="localhost" time="0.178">
-  <properties/>
-  <testcase name="getNumberFromVectorTest()" classname="com.gabrielMJr.twaire.tools.NumberAnalystTest" time="0.044"/>
-  <testcase name="upperTest()" classname="com.gabrielMJr.twaire.tools.NumberAnalystTest" time="0.014"/>
-  <testcase name="checkValueTest()" classname="com.gabrielMJr.twaire.tools.NumberAnalystTest" time="0.091"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
