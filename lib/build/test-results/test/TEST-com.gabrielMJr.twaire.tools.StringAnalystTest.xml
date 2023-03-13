@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gabrielMJr.twaire.tools.StringAnalystTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-13T15:57:13" hostname="localhost" time="0.049">
+  <properties/>
+  <testcase name="countWordsMethod()" classname="com.gabrielMJr.twaire.tools.StringAnalystTest" time="0.01"/>
+  <testcase name="isDotTest()" classname="com.gabrielMJr.twaire.tools.StringAnalystTest" time="0.011"/>
+  <testcase name="isNullTest()" classname="com.gabrielMJr.twaire.tools.StringAnalystTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gabrielMJr.twaire.tools.ListTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-13T15:57:13" hostname="localhost" time="0.066">
+  <properties/>
+  <testcase name="listOnValueOfStringTest()" classname="com.gabrielMJr.twaire.tools.ListTest" time="0.016"/>
+  <testcase name="listOnValueOfIntTest()" classname="com.gabrielMJr.twaire.tools.ListTest" time="0.011"/>
+  <testcase name="listOnValueOfLongTest()" classname="com.gabrielMJr.twaire.tools.ListTest" time="0.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

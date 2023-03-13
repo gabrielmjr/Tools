@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gabrielMJr.twaire.tools.LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-13T15:57:13" hostname="localhost" time="0.209">
+  <properties/>
+  <testcase name="someLibraryMethodReturnsTrue()" classname="com.gabrielMJr.twaire.tools.LibraryTest" time="0.209"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
