@@ -1,5 +1,5 @@
-.gradle/
-build/
-!gradle-wrapper.jar
-gradletasknamecache
-gradle-app.setting
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
