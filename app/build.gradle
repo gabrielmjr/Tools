@@ -7,9 +7,7 @@ repositories {
 }
 
 ext.mainClass = 'com.gabrielMJr.twaire.tools.Physic'
-ext.version = '1.0.3-SNAPSHOT'
-
-version = project.version
+version = '1.0.3-SNAPSHOT'
 
 dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
