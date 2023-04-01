@@ -1,4 +1,4 @@
-package com.gabrielMJr.twaire.tools;
+package com.gabrielmjr.twaire.tools;
 
 public class NumberAnalyst {
     public static String upper (int value) {

@@ -1,10 +1,10 @@
-package com.gabrielMJr.twaire.tools;
+package com.gabrielmjr.twaire.tools;
 
 import org.junit.jupiter.api.Test;
 
-import static com.gabrielMJr.twaire.tools.StringAnalyst.isEmpty;
-import static com.gabrielMJr.twaire.tools.StringAnalyst.isDot;
-import static com.gabrielMJr.twaire.tools.StringAnalyst.countWords;
+import static com.gabrielmjr.twaire.tools.StringAnalyst.isEmpty;
+import static com.gabrielmjr.twaire.tools.StringAnalyst.isDot;
+import static com.gabrielmjr.twaire.tools.StringAnalyst.countWords;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

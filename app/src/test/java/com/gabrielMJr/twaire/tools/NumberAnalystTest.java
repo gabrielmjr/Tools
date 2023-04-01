@@ -1,9 +1,9 @@
-package com.gabrielMJr.twaire.tools;
+package com.gabrielmjr.twaire.tools;
 
 import org.junit.jupiter.api.Test;
 
-import static com.gabrielMJr.twaire.tools.NumberAnalyst.upper;
-import static com.gabrielMJr.twaire.tools.NumberAnalyst.putParenthesesIfNegative;
+import static com.gabrielmjr.twaire.tools.NumberAnalyst.upper;
+import static com.gabrielmjr.twaire.tools.NumberAnalyst.putParenthesesIfNegative;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NumberAnalystTest {
