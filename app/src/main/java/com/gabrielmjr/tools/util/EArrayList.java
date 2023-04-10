@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.ListIterator;
-import java.time.temporal.ValueRange;
 
-public class EArrayList<Object> implements EList<Object> {
-    private Collection values;
+public class EArrayList<E extends Object> implements EList<E> {
+    private Collection<E> values;
     
     @Override
     public int size() {
@@ -33,14 +32,14 @@ public class EArrayList<Object> implements EList<Object> {
     public Object[] toArray() {
         return values.toArray();
     }
-
+    
     @Override
-    public Object[] toArray(Object[] values) {
+    public <T extends Object> T[] toArray(T[] values) {
         return this.values.toArray(values);
     }
 
     @Override
-    public boolean add(Object value) {
+    public boolean add(E value) {
         return values.add(value);
     }
 
@@ -50,27 +49,27 @@ public class EArrayList<Object> implements EList<Object> {
     }
 
     @Override
-    public boolean containsAll(Collection value) {
+    public boolean containsAll(Collection<?> value) {
         return values.containsAll(value);
     }
 
     @Override
-    public boolean addAll(Collection value) {
-        return values.addAll(value);
+    public boolean addAll(Collection<? extends E> collection) {
+        return values.addAll(collection);
     }
 
     @Override
-    public boolean addAll(int p1, Collection p2) {
+    public boolean addAll(int position, Collection collection) {
         return false;
     }
 
     @Override
-    public boolean removeAll(Collection collection) {
+    public boolean removeAll(Collection<?> collection) {
         return values.removeAll(collection);
     }
 
     @Override
-    public boolean retainAll(Collection collection) {
+    public boolean retainAll(Collection<?> collection) {
         return values.retainAll(collection);
     }
 
@@ -80,12 +79,12 @@ public class EArrayList<Object> implements EList<Object> {
     }
 
     @Override
-    public Object get(int position) {
-        return null;//values.toArray()[i];
+    public E get(int position) {
+        return (E)values.toArray()[position];
     }
 
     @Override
-    public Object set(int position, Object object) {
+    public E set(int position, Object object) {
         return null;
     }
 
@@ -94,8 +93,8 @@ public class EArrayList<Object> implements EList<Object> {
     }
 
     @Override
-    public Object remove(int position) {
-        return null:
+    public E remove(int position) {
+        return null;
     }
 
     @Override
