@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Test {
     public void test() {
-        List<Integer> list = new ArrayList<>();
-        EList<Integer> list2 = new EArrayList<>();
+        List list = new ArrayList();
+        EList<String> list2 = new EArrayList<String>();
     }
 }
