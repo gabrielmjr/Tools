@@ -1,4 +1,4 @@
-package com.gabrielmjr.tools;
+package com.mjr.code.tools;
 
 public class StringAnalyst {
     public static boolean isEmpty (String value) {

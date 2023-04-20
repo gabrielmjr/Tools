@@ -1,4 +1,4 @@
-package com.gabrielmjr.tools;
+package com.mjr.code.tools;
 
 public class ToolsException extends Exception {
     public ToolsException(String message) {

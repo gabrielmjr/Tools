@@ -1,4 +1,4 @@
-package com.gabrielmjr.tools.util;
+package com.mjr.code.tools.util;
 
 import java.util.List;
 
