@@ -51,7 +51,7 @@ public class NumberAnalyst {
 					break;
 			}
 		}
-		return upperValue;
+		return (value < 0) ? "-" + upperValue: upperValue;
 	}
 
 	public static String upper(long value) {
@@ -91,6 +91,6 @@ public class NumberAnalyst {
 					break;
 			}
 		}
-		return upperValue;
+		return(value < 0) ? "-" + upperValue: upperValue;
 	}
 }
