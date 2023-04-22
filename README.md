@@ -2,6 +2,11 @@
 
 Tools is a pack of useful tools made by and for Java created and developed by me.
 
+***Status***
+
+[![Java CI](https://github.com/gabrielmjr/Tools/actions/workflows/gradle.yml/badge.svg)](https://github.com/gabrielmjr/Tools/actions/workflows/gradle.yml)
+
+
 # Info
 
 ***Project type:*** Maven with Java
