@@ -13,6 +13,18 @@ public class NumberAnalyst {
 	public static String putParenthesesIfNegative(double value) {
 		return (value < 0) ? "(- " + (- value) + ")" : String.valueOf(value);
 	}
+    
+    public static String putParenthesesIfNegative(int value, String unit) {
+        return (value < 0) ? "(- " + (- value) + unit + ")" : String.valueOf(value);
+    }
+
+    public static String putParenthesesIfNegative(long value, String unit) {
+        return (value < 0) ? "(- " + (- value) + unit + ")" : String.valueOf(value);
+    }
+
+    public static String putParenthesesIfNegative(double value, String unit) {
+        return (value < 0) ? "(- " + (- value) + unit + ")" : String.valueOf(value);
+	}
 
 	public static String upper(int value) {
 		String upperValue = new String();

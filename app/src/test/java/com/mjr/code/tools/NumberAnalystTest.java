@@ -48,7 +48,7 @@ public class NumberAnalystTest {
 	}
 	
 	@Test
-	public void putParenthesesIfNegativeInInteger() {
+	public void putParenthesesIfNegativeInIntegerTest() {
 	    int[] values = new int[] {
 		    8,
 		    3,
@@ -68,7 +68,7 @@ public class NumberAnalystTest {
 	}
 	
 	@Test
-	public void putParenthesesIfNegativeInLong() {
+	public void putParenthesesIfNegativeInLongTest() {
 		long[] values = new long[] {
 			2,
 			7,
@@ -88,7 +88,7 @@ public class NumberAnalystTest {
 	}
 	
 	@Test
-	public void putParenthesesIfNegativeInDouble() {
+	public void putParenthesesIfNegativeInDoubleTest() {
 		double[] values = new double[] {
 			-3.5,
 			-2.5,
